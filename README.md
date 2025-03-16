@@ -22,12 +22,12 @@ System.out.println("Available models: " + modelsJson);
 ```
 
 ### Fetch Model Details
-```
+```java
 String modelInfo = ollama.modelDetails(config, "mistral");
 System.out.println("Mistral model info:\n" + modelInfo);
 ```
 ### Basic Request
-```
+```java
 Request rq = new Request();
 rq.model = "mistral";
 rq.prompt = "What is the capital of France?";
@@ -36,7 +36,7 @@ Response response = ollama.request(config, rq);
 System.out.println("Response: " + response.response);
 ```
 ### Streaming Request
-```
+```java
 ollama.askWithStream("mistral", "Tell me a joke.", new OllamaJava.StreamListener() {
     @Override
     public boolean onResponseReceived(StreamedResponse responsePart) {
@@ -46,7 +46,7 @@ ollama.askWithStream("mistral", "Tell me a joke.", new OllamaJava.StreamListener
 });
 ```
 ### Chat Interaction
-```
+```java
 ChatRequest chat = new ChatRequest();
 chat.model = "mistral";
 chat.messages = new Message[]{ new Message("user", "Hello, how are you?") };
@@ -57,7 +57,7 @@ for (Response r : chatResponses) {
 }
 ```
 ### Selecting a Model via GUI
-```
+```java
 String selectedModel = ollama.selectModel(config);
 System.out.println("User selected model: " + selectedModel);
 ```
