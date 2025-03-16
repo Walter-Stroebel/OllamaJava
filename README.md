@@ -14,7 +14,7 @@ Easy use of Ollama from Java. No Spring nonsense, unreadable Lambda's or weird d
 
 ## Usage Examples
 ### Initialize and List Available Models
-```
+```java
 OllamaJava ollama = new OllamaJava();
 Config config = new Config();
 String modelsJson = ollama.listModels(config);
